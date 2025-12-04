@@ -173,7 +173,7 @@ def analyze_route():
 
 llm = LocalLLM()
 
-# Route for features
+# Route for features generation
 @app.route("/generate-features", methods=["POST"])
 def generate_features():
     data = request.get_json()

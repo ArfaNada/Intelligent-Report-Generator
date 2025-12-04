@@ -4,7 +4,7 @@ import torch
 import json
 from flask_cors import CORS
 
-# ------------ LLM CLASS ------------
+#  LLM CLASS
 class LocalLLM:
     def __init__(self, model_name="mistralai/Mistral-7B-Instruct-v0.1", device="cpu"):
         print("Loading model...")
