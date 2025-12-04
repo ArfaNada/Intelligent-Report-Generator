@@ -73,6 +73,10 @@ try:
 except Exception as e:
     print(f"⚠️ Failed to load emotion model: {e}")
 
+# --------------------- LOAD FEATURES MODEL ---------------------
+print("🔥 Loading Features Model...")
+llm = LocalLLM()
+
 # --------------------- HELPER FUNCTIONS ---------------------
 
 # Image embedding & prediction
@@ -171,7 +175,7 @@ def analyze_route():
         "dominant_emotion": emotion
     })
 
-llm = LocalLLM()
+
 
 # Route for features generation
 @app.route("/generate-features", methods=["POST"])
