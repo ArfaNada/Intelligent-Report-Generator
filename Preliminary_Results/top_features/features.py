@@ -41,29 +41,3 @@ Return strictly in JSON:
         return result
 
 
-
-app = Flask(__name__)
-CORS(app)
-
-llm = LocalLLM()
-
-
-@app.route("/generate-features", methods=["POST"])
-def generate_features():
-    data = request.get_json()
-
-    product_name = data.get("product_name")
-    brand = data.get("brand")
-
-    if not product_name or not brand:
-        return jsonify({"error": "Missing 'product_name' or 'brand'"}), 400
-
-    result = llm.generate_features(product_name, brand)
-    return jsonify(result)
-
-#test
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
-
-
