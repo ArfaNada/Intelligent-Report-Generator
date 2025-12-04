@@ -61,6 +61,7 @@ def generate_features():
     result = llm.generate_features(product_name, brand)
     return jsonify(result)
 
+#test
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
